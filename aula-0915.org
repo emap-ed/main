@@ -1,0 +1,15 @@
+#+title: aula 01
+
+* apresentação do curso
+
+- material
+- github
+- notificações
+- avaliação via trabalhos
+
+- basic haskell
+- tipos e funções
+- processando listas
+- indução e recursão
+
+
