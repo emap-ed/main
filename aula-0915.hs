@@ -5,10 +5,10 @@
 fib1 :: Double -> Double
 fib1 0 = 0
 fib1 1 = 1
-fib1 n = fib (n - 2) + fib (n - 1)
+fib1 n = fib1 (n - 2) + fib1 (n - 1)
 
-fib :: Double -> Double
-fib n = aux 1 0 n
+fib3 :: Double -> Double
+fib3 n = aux 1 0 n
   where
     aux a b c
       | c == 0 = b
@@ -17,18 +17,25 @@ fib n = aux 1 0 n
 
 -- factorial
 
-fact1 :: Integer -> Integer
+fact1 :: Double -> Double
 fact1 0 = 1
 fact1 n = n * fact1 (n - 1)
 
+fact1' :: Double -> Double
+fact1' n
+  | n == 0 = 1
+  | n > 0 = n * fact1' (n - 1)
+
+
+fact2 :: Double -> Double
 fact2 n = product [1..n]
 
 
 -- primos e listas infinitas
 
-primes = filterPrime [2..]
+primes n = filterPrime [n..]
   where filterPrime (p:xs) =
-          p : filterPrime [ x | x <- xs, x `mod` p /= 0]
+          p : filterPrime [ x | x <- xs, (mod x p) /= 0]
 
 
 
@@ -52,8 +59,7 @@ test1 = map (\x -> x + 10) [1..100]
 test2 = filter odd [1..100]
 
 -- soma de 1..10
-test3 = foldr (+) 0 [1..10] 
-
+test3 = foldr (+) 0 [1..10]
 
 label :: [a] -> [(Nat,a)] -- se tirar esta linha?
 label xs = zip [0..] xs
@@ -65,21 +71,19 @@ length' :: [a] -> Nat
 length' = foldr succ 0 
   where succ x n = n + 1
 
--- λ> s4 = (+) 4
--- λ> s4 10
--- 14
-
-
+  
 {- list processing -}
 
--- qual é melhor? direcao as vezes é importante
 concat1, concat2 :: [[a]] -> [a]
 concat1 = foldr (++) []
 concat2 = foldl (++) []
 
--- online vs offline
+append [] ys = ys
+append (x:xs) ys = x : (append xs ys)
 
--- :t scanl
+-- qual é melhor? direcao as vezes é importante. Veja o custo de
+-- append.
+
 
 {- inductive and recursive definitions -}
 
