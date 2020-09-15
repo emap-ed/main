@@ -10,6 +10,11 @@ repositorio principal do curso
 
 * referências
 
-- https://www.cambridge.org/core/books/algorithm-design-with-haskell/824BE0319E3762CE8BA5B1D91EEA3F52#fndtn-information
-- http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf
+- [[https://www.cambridge.org/core/books/algorithm-design-with-haskell/824BE0319E3762CE8BA5B1D91EEA3F52#fndtn-information][Algorithm Design with Haskell]]
+- [[http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf][Algorithms]]
 
+* mooc
+
+- https://www.coursera.org/specializations/algorithms?#courses
+- https://www.coursera.org/specializations/data-structures-algorithms?
+- https://www.coursera.org/learn/data-structures#syllabus
