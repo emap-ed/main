@@ -1,7 +1,12 @@
-#+title: Curso de Algoritimos e Estruturas de Dados
+#+title: Algoritmos e Estruturas de Dados
 #+author: Alexandre Rademaker
 
 repositorio principal do curso
+
+* monitor
+
+- Igor
+- horário? 
 
 * referências
 
