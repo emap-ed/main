@@ -5,7 +5,7 @@ repositorio principal do curso
 
 * monitor
 
-- Igor Cortes Junqueiras
+- Igor Cortes Junqueira
 - Horário: Quintas 18h
 - Link: https://meet.google.com/pzj-mqpw-did
 
