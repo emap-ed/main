@@ -7,9 +7,9 @@
 - notificações
 - avaliação via trabalhos
 
+* capitulo 1
+
 - basic haskell
 - tipos e funções
-- processando listas
-- indução e recursão
 
 

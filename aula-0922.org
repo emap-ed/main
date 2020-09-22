@@ -1,0 +1,31 @@
+#+title: aula 02
+
+- dúvidas
+
+* conteúdo
+
+capitulo 1:
+
+- processando listas
+
+- indução e recursão. See
+  https://math.stackexchange.com/questions/228863/recursive-vs-inductive-definition
+
+
+capitulo 2
+
+- Asymptotic notation
+- Estimating running times
+- Running times in context
+- Amortised running times
+
+
+* exercícios sugeridos
+
+1.10
+1.11
+1.15
+1.21
+2.5
+2.14
+2.15

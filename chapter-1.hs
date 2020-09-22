@@ -31,14 +31,6 @@ fact2 :: Double -> Double
 fact2 n = product [1..n]
 
 
--- primos e listas infinitas
-
-primes n = filterPrime [n..]
-  where filterPrime (p:xs) =
-          p : filterPrime [ x | x <- xs, (mod x p) /= 0]
-
-
-
 {-
 
  tipos e funções
@@ -82,7 +74,7 @@ append [] ys = ys
 append (x:xs) ys = x : (append xs ys)
 
 -- qual é melhor? direcao as vezes é importante. Veja o custo de
--- append.
+-- append. Use `:set +s`
 
 
 {- inductive and recursive definitions -}
