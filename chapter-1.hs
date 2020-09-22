@@ -49,7 +49,7 @@ soma n = n + 10
 test0 = map soma [1..100]
 test1 = map (\x -> x + 10) [1..100]
 test2 = filter odd [1..100]
-
+  
 -- soma de 1..10
 test3 = foldr (+) 0 [1..10]
 
@@ -63,8 +63,9 @@ length' :: [a] -> Nat
 length' = foldr succ 0 
   where succ x n = n + 1
 
-  
+
 {- list processing -}
+
 
 concat1, concat2 :: [[a]] -> [a]
 concat1 = foldr (++) []
@@ -79,6 +80,7 @@ append (x:xs) ys = x : (append xs ys)
 
 {- inductive and recursive definitions -}
 
+perms1 :: [a] -> [[a]]
 perms1 [] = [[]]
 perms1 (x:xs) = [zs | ys <- perms1 xs, zs <- inserts x ys]
 
@@ -160,8 +162,10 @@ help3 (s,f) xss = if s > 0 || null xss then f
 
 
 {-
-- https://link.springer.com/chapter/10.1007/3-540-59451-5_7
-- https://www.amazon.com/Algebra-Programming-Prentice-hall-International-Computer/dp/013507245X
+ Outros exemplos de:
+
+ - https://link.springer.com/chapter/10.1007/3-540-59451-5_7
+ - https://www.amazon.com/Algebra-Programming-Prentice-hall-International-Computer/dp/013507245X
 -}
 
 foldn :: (a,a -> a) -> (Integer -> a)
@@ -202,9 +206,6 @@ isort :: Ord a => [a] -> [a]
 isort []  = []
 isort (x:xs) = insert x (isort xs)
 
-
-
--- outros exemplos
 
 div2 :: Int -> Maybe Int
 div2 x 
