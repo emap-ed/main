@@ -1,0 +1,18 @@
+#+title: Monitoria 24/09
+
+- Conteúdo explicado a partir de dúvidas da turma
+
+* Conteúdo abordado
+
+- foldr / foldl
+- funções "lambda" (definidas com '\' e não nomeadas)
+- Maybe (Just / Nothing)
+- composição de funções
+- filter
+- head com fold ( head = foldr (<<) ⊥ where x << y = x ). Cap. 1
+- função main, ghci / ghc, compilar e importar.
+
+* Problemas do livro trabalhados
+
+- 1.4
+- 1.6
