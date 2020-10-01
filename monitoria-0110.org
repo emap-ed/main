@@ -1,0 +1,17 @@
+#+title: Monitoria 01/10
+
+- Capítulo 2: Runtime
+
+* Conteúdo abordado
+
+- Notação Big O
+- Notação Big Theta
+- Notação Big Omega
+- Avaliação de Runtime
+- Equações de recorrência
+
+* Problemas do livro trabalhados
+
+- 2.2
+- 2.3
+- 2.8
