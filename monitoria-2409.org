@@ -2,7 +2,7 @@
 
 - Conteúdo explicado a partir de dúvidas da turma
 
-* Conteúdo abordado
+* conteúdo abordado
 
 - foldr / foldl
 - funções "lambda" (definidas com '\' e não nomeadas)
@@ -12,7 +12,7 @@
 - head com fold ( head = foldr (<<) ⊥ where x << y = x ). Cap. 1
 - função main, ghci / ghc, compilar e importar.
 
-* Problemas do livro trabalhados
+* problemas do livro trabalhados
 
 - 1.4
 - 1.6

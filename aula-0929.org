@@ -1,0 +1,23 @@
+#+title: aula 03
+
+- dúvidas
+
+* Asymptotic notation
+
+- notations Θ, O, and Ω 
+
+- f = Θ(g) if C g(n) = f(n) 􏰀 Dg(n)
+
+- Estimating running times
+- Running times in context
+- Amortised running times
+
+* exercícios sugeridos
+
+1.10
+1.11
+1.15
+1.21
+2.5
+2.14
+2.15

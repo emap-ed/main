@@ -1,3 +1,6 @@
+
+module Chapter1 where
+
 {-  motivacao  -}
 
 -- fibonacci
@@ -13,7 +16,7 @@ fib3 n = aux 1 0 n
     aux a b c
       | c == 0 = b
       | otherwise = aux (a + b) a (c - 1)
-  
+
 
 -- factorial
 
@@ -44,18 +47,23 @@ fact2 n = product [1..n]
 
 type Nat = Int
 
+soma :: Num a => a -> a
 soma n = n + 10
 
+test0 :: [Integer]
 test0 = map soma [1..100]
+test1 :: [Integer]
 test1 = map (\x -> x + 10) [1..100]
 test2 = filter odd [1..100]
   
 -- soma de 1..10
+test3 :: Integer
 test3 = foldr (+) 0 [1..10]
 
 label :: [a] -> [(Nat,a)] -- se tirar esta linha?
 label xs = zip [0..] xs
 
+test4 :: [(Nat, Integer)]
 test4 = label [1..10]
 
 -- incomplete input for foldr!
@@ -71,6 +79,7 @@ concat1, concat2 :: [[a]] -> [a]
 concat1 = foldr (++) []
 concat2 = foldl (++) []
 
+append :: [a] -> [a] -> [a]
 append [] ys = ys
 append (x:xs) ys = x : (append xs ys)
 
@@ -88,14 +97,22 @@ inserts :: a -> [a] -> [[a]]
 inserts x []     = [[x]]
 inserts x (y:ys) = (x : y : ys) : map (y:) (inserts x ys)
 
+-- >>> perms1 [1,2,3]
+-- [[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+
 perms2 :: [a] -> [[a]]
 perms2 = foldr step [[]]
   where
     step x xs = concatMap (inserts x) xs
 
+-- >>> perms2 [1,2,3]    
+-- [[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+
 perms3 :: [a] -> [[a]]
 perms3 = foldr (concatMap . inserts) [[]]
 
+-- >>> perms3 [1,2,3]
+-- [[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
 
 perms4 :: [a] -> [[a]]
 perms4 [] = [[]]
@@ -105,16 +122,22 @@ picks :: [a] -> [(a,[a])]
 picks [] = []
 picks (x:xs) = (x,xs) : [(y, x:ys) | (y,ys) <- picks xs]
 
+-- >>> perms4 [1,2,3]
+-- [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+
 perms5 :: [a] -> [[a]]
 perms5 [] = [[]]
 perms5 xs = concatMap subperms (picks xs)
   where
     subperms (x,ys) =  map (x:) (perms5 ys)
 
+-- >>> perms5 [1,2,3]    
+-- [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
--- until (> 100) (+ 2) 1
 while p = until (not . p)
--- while (< 100) (+ 2) 1
+
+-- >>> while (< 100) (+ 2) 1
+-- 101
 
 
 {- fusion -}
@@ -124,7 +147,10 @@ while p = until (not . p)
 -- concatMap f . map g = concatMap (f . g)
 -- foldr f e . map g = foldr (f . g) e
 
+z0 :: [Integer] -> [Integer]
 z0 = map (\x -> x * 2) . map (\x -> x + 3)
+
+z1 :: [Integer] -> [Integer]
 z1 = map ((\x -> x * 2) . (\x -> x + 3))
 
 -- foldr f e (xs ++ ys) = foldr f (foldr f e ys) xs
@@ -132,14 +158,15 @@ z1 = map ((\x -> x * 2) . (\x -> x + 3))
 
 
 {- accumulating and tupling -}
-
-
+                                   
 collapse1 :: [[Int]] -> [Int]
 collapse1 xss = help1 [] xss
 
 help1 xs xss = if sum xs > 0 || null xss then xs
                else help1 (xs ++ head xss) (tail xss)
 
+-- >>> collapse1 [[-2,1],[3],[-1]]
+-- [-2,1,3]
 
 collapse2 :: [[Int]] -> [Int]
 collapse2 xss = help2 (0,[]) $ labelsum xss
@@ -150,15 +177,19 @@ help2 (s,xs) xss = if s > 0 || null xss then xs
 cat (s,xs) (t,ys) = (s + t, xs ++ ys)
 labelsum xss = zip (map sum xss) xss
 
+-- >>> collapse2 [[-2,1],[3],[-1]]
+-- [-2,1,3]
 
 collapse3 :: [[Int]] -> [Int]
-collapse3 xss = help2 (0,[]) $ labelsum xss
+collapse3 xss = help3 (0,id) (labelsum xss) []
 
 help3 (s,f) xss = if s > 0 || null xss then f
                   else help3 (s + t, f . (xs ++)) (tail xss)
   where
     (t,xs) = head xss
 
+-- >>> collapse3 [[-2,1],[3],[-1]]
+-- [-2,1,3]
 
 
 {-
@@ -216,6 +247,7 @@ div2 x
 div4 :: Int -> Maybe Int
 div4 x = div2 x >>= div2
 
+div8 :: Int -> Maybe Int
 div8 x = div2 x >>= div2 >>= div2
 
 my :: [a] -> [a]
