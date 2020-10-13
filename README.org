@@ -13,6 +13,7 @@ repositorio principal do curso
 
 - [[https://www.cambridge.org/core/books/algorithm-design-with-haskell/824BE0319E3762CE8BA5B1D91EEA3F52#fndtn-information][Algorithm Design with Haskell]]
 - [[http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf][Algorithms]]
+- [[http://www.carfield.com.hk/document/linux/emacs_tutorial.pdf][Living in Emacs]]
 
 See http://www.cs.ox.ac.uk/publications/books/adwh/errata.html
 

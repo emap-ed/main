@@ -6,6 +6,12 @@ module Chapter3 where
 type Nat = Int
 type SymList a = ([a],[a])
 
+cons :: a -> [a] -> [a]
+cons x xs = x:xs
+
+snoc :: a -> [a] -> [a]
+snoc x xs = xs ++ [x]
+
 
 single :: [a] -> Bool
 single [x] = True
