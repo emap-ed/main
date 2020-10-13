@@ -1,0 +1,8 @@
+#+title: Monitoria 08/10
+
+* Conteúdo abordado
+
+- Git e Github
+- Dúvidas dos capítulos 1 e 2
+- Listas de exercício
+- Análise de Runtime
