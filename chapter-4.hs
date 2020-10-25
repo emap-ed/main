@@ -106,6 +106,9 @@ bsearch5 f t = from (0,p) (q,0) where
         | z == t = (c,y) : from (x1,y1) (c-1,y+1) ++ from (c+1,y-1) (x2,y2)
         | z > t  = from (x1,y1) (c-1,y) ++ from (c+1,y-1) (x2,y2)
         where z = f (c,y)
+
+
+-- test bsearch5 (\(x,y) -> x^2 + 3^y) 20259
       
 
 -- section 4.3
