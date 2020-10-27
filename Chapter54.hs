@@ -1,11 +1,11 @@
 module Chapter54 where
 
-import Chapter52 ( msort )
+import qualified Chapter52 as M
 
 type LWord = [Char]
 
 sortWords :: [LWord] -> [LWord]
-sortWords = msort
+sortWords = M.msort
 
 -- >>> sortWords ["Alexandre","Roberto","Pedro","Jose","Jessica"]
 -- ["Alexandre","Jessica","Jose","Pedro","Roberto"]
