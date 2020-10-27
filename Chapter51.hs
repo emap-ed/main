@@ -1,8 +1,7 @@
 
-module Chapter51 where
+module Chapter51 (qsort) where
 
 import Debug.Trace ( trace ) 
-
 
 data Tree a = Null | Node (Tree a) a (Tree a) deriving Show
 
