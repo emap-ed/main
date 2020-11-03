@@ -1,0 +1,6 @@
+#+title: aula 07
+
+
+Links:
+
+- https://lean-forward.github.io/logical-verification/2020/index.html
