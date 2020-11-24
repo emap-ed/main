@@ -77,10 +77,10 @@ minWith f = foldr1 (smaller f)
 -- [3,3]
 
 -- >>> gstep 6 [7,1,2,3]
--- [7,1,2,3,6]
+-- [7,1,2,3,6] (4 inversoes)
 
 -- >>> gstep 6 [3,2,1,7] 
--- [3,2,1,6,7]
+-- [3,2,1,6,7] (3 inversoes)
 
 -- >>> minWith ic (map (gstep 6) [[7,1,2,3],[3,2,1,7]])
 -- [3,2,1,6,7]
@@ -103,20 +103,16 @@ gstep x (y:xs) =
 sort = foldr gstep []
 
 
-{- Selection sort
-
-perms [] = [[]]
-perms xs = concatMap subperms (picks xs)
-  where
-    subperms (x, ys) = map (x :) (perms ys)
+-- perms [] = [[]]
+-- perms xs = concatMap subperms (picks xs)
+--   where
+--     subperms (x, ys) = map (x :) (perms ys)
 
 picks [] = []
 picks (x:xs) = (x, xs) : [(y, x : ys) | (y, ys) <- picks xs]
 
-sort [] = []
-sort xs = x : sort ys
+ssort [] = []
+ssort xs = x : ssort ys
   where
     (x, ys) = pick xs
     pick xs = minimum (picks xs)
-
--}
